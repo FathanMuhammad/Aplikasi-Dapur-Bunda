@@ -1,8 +1,6 @@
 <<<<<<< HEAD
 # dapurbunda
 
-A new Flutter project.
-
 ## Getting Started
 
 # Dapur Bunda Bahagia - Sistem Manajemen Restoran
