@@ -2,6 +2,9 @@
 
 ## Getting Started
 
+![Login Dapur Bunda](gambar(1).jpg)
+
+
 # Dapur Bunda Bahagia - Sistem Manajemen Restoran
 
 Aplikasi Android untuk mengelola operasional restoran "Dapur Bunda Bahagia" yang dibuat menggunakan Flutter dan Firebase.
