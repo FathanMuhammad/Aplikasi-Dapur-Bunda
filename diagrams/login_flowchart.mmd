@@ -1,0 +1,34 @@
+flowchart TD
+  A([Mulai]) --> B{Sudah login?\n(token/sesi tersedia)}
+  B -- Ya --> C[Ambil user doc by uid\n(users/{uid})]
+  B -- Belum --> J[Form Login (email + password)]
+
+  J --> K{Validasi input}
+  K -- Invalid --> L[Tampilkan error form\n(email format, min password)]
+  L --> J
+  K -- Valid --> M[Auth: signIn(email, password)]
+  M -- Gagal --> N[Tampilkan error\n(akun tidak ada/password salah/akun diblokir)]
+  N --> J
+  M -- Berhasil --> C
+
+  C --> D{Akun aktif?}
+  D -- Tidak --> E[Tampilkan pesan 'Akun nonaktif'\nSign out sesi]
+  E --> F[Ke Layar Login]
+  D -- Ya --> G{Role?}
+
+  G -- admin --> H[Ke Admin Home/Dashboard]
+  G -- user/kasir --> I[Ke User Home]
+
+  H --> O[Operasi Admin:\nKelola Produk, Pesanan, Laporan]
+  I --> P[Operasi User:\nBuat/Lihat Pesanan]
+
+  O --> Q{Logout?}
+  P --> Q
+  Q -- Ya --> R[signOut() & hapus sesi]
+  R --> F[Ke Layar Login]
+  Q -- Tidak --> S[Gunakan aplikasi]
+  S --> O
+  S --> P
+
+  J -. Lupa Password .-> FP[sendPasswordResetEmail(email)]
+  FP --> J
