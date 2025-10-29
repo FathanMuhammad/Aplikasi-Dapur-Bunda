@@ -3,6 +3,7 @@
 ## Getting Started
 
 ![Login Dapur Bunda](gambar(1).jpg)
+![Transaksi Bunda](gambar(2).jpg)
 
 
 # Dapur Bunda Bahagia - Sistem Manajemen Restoran
